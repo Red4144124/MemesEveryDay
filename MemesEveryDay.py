@@ -6,12 +6,10 @@ from telegram import Bot
 from telegram.error import TelegramError
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-# Установите ваш токен бота
-TOKEN = '7278409108:AAH07ssap9XCdZapZlJY7SmuidfTpCExDuQ'
-# Установите ID вашего канала
-CHANNEL_ID = '@memeseverydayss'
-# Установите путь к папке с мемами
-MEMES_FOLDER = 'I:\\MemesEveryDay'
+
+TOKEN = ''
+CHANNEL_ID = '@'
+MEMES_FOLDER = ''
 
 # Настройка логирования
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -41,7 +39,6 @@ async def send_meme():
         logger.error(f'Failed to send meme: {e}')
 
 async def main():
-    # Отправка первого мема сразу после запуска
     await send_meme()
 
     scheduler = AsyncIOScheduler()
